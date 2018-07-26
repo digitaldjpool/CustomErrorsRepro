@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomErrorsRepro.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,15 @@ namespace CustomErrorsRepro.Controllers
     {
         public ActionResult Index()
         {
+            throw new Exception("CustomErrorsRepro exception thrown!");
+
             return View();
+        }
+
+        public ActionResult MemoryLog()
+        {
+            var cache = new System.Web.Caching.Cache();
+            return View(cache.Get("log") as List<LogMessage>);
         }
 
         public ActionResult About()

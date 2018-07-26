@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CustomErrorsRepro.Models.LogMessage>
+
+@{
+    ViewBag.Title = "MemoryLog";
+}
+
+<h2>MemoryLog</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>customErrors Mode</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+            @Html.DisplayFor(m => m)
+    </tbody>
+</table>
